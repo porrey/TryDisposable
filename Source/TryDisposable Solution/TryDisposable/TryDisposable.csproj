@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/porrey/TryDisposable</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/porrey/TryDisposable.git</RepositoryUrl>
+    <PackageIconUrl>https://github.com/porrey/TryDisposable.git</PackageIconUrl>
+    <RepositoryType>Git</RepositoryType>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>Wrap an object in a disposable decorator to attempt to dispose the object later. This is useful when retrieving an instance of an object from a factory or container while only having an interface reference that does not implement IDisposable.</Description>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <Copyright>Copyright © Daniel M. Porrey 2019</Copyright>
+    <Authors>Daniel M. Porrey</Authors>
+  </PropertyGroup>
+
+</Project>
