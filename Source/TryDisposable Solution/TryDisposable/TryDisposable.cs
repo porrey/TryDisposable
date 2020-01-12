@@ -1,23 +1,23 @@
 ﻿namespace System
 {
 	/// <summary>
-	/// IDisposable wrapper for objects retrieved from a creation
+	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
 	/// design pattern such as a factory. If the type interface does
-	/// not expose IDisposable, but the concrete implementation does,
+	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
 	/// this wrapper makes it possible to call IDispose the object
 	/// in a consistent manner. It also allows the class to be used
 	/// in a using statement.
 	/// </summary>
-	/// <typeparam name="T">The interface type of the concrete instance being disposed.</typeparam>
-	public class TryDisposable<T> : ITryDisposable<T>
+	/// <typeparam name="TUnderlyingType">The interface type of the concrete instance being disposed.</typeparam>
+	public class TryDisposable<TUnderlyingType> : ITryDisposable<TUnderlyingType>
 	{
 		/// <summary>
-		/// Creates an instance of TryDisposable of the specified
+		/// Creates an instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.
 		/// </summary>
-		/// <param name="instance">An instance of the object that IDispose
+		/// <param name="instance">An instance of the object that <see cref="IDisposable"/>
 		/// may be implemented on.</param>
-		public TryDisposable(T instance)
+		public TryDisposable(TUnderlyingType instance)
 		{
 			if (instance == null) { throw new ArgumentNullException(nameof(instance)); }
 			this.Instance = instance;
@@ -26,24 +26,25 @@
 		/// <summary>
 		/// Gets the underlying instance.
 		/// </summary>
-		public T Instance { get; }
+		public TUnderlyingType Instance { get; }
 
 		/// <summary>
 		/// Disposes the underlying instance.
 		/// </summary>
 		public void Dispose()
 		{
-			TryDisposable<T>.Dispose(this.Instance);
+			TryDisposable<TUnderlyingType>.Dispose(this.Instance);
 		}
 
 		/// <summary>
-		/// Creates an instance of TryDisposable of the specified
+		/// Creates an instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.
 		/// </summary>
 		/// <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
 		/// <param name="instance">A concrete instance of the type specified.</param>
-		/// <returns>An instance of TryDisposable of the specified
+		/// <returns>An instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.</returns>
+		[Obsolete("Use System.TryDisposableFactory.Create() method instead.")]
 		public static ITryDisposable<TItem> Create<TItem>(TItem instance)
 		{
 			return new TryDisposable<TItem>(instance);

@@ -1,18 +1,30 @@
 ﻿namespace System
 {
 	/// <summary>
-	/// IDisposable wrapper for objects retrieved from a creation
+	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
 	/// design pattern such as a factory. If the type interface does
-	/// not expose IDisposable, but the concrete implementation does,
+	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
+	/// this wrapper makes it possible to call Dispose on the object
+	/// in a consistent manner. It also allows the class to be used
+	/// in a using statement.
+	/// </summary>
+	public interface ITryDisposable : IDisposable
+	{
+	}
+
+	/// <summary>
+	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
+	/// design pattern such as a factory. If the type interface does
+	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
 	/// this wrapper makes it possible to call IDispose the object
 	/// in a consistent manner. It also allows the class to be used
 	/// in a using statement.
 	/// </summary>
-	public interface ITryDisposable<T> : IDisposable
+	public interface ITryDisposable<TUnderlyingType> : ITryDisposable, IDisposable
 	{
 		/// <summary>
 		/// Gets the underlying instance.
 		/// </summary>
-		T Instance { get; }
+		TUnderlyingType Instance { get; }
 	}
 }

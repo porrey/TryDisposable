@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TryDisposable</name>
+    </assembly>
+    <members>
+        <member name="T:System.ITryDisposable">
+            <summary>
+            <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
+            design pattern such as a factory. If the type interface does
+            not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
+            this wrapper makes it possible to call Dispose on the object
+            in a consistent manner. It also allows the class to be used
+            in a using statement.
+            </summary>
+        </member>
+        <member name="T:System.ITryDisposable`1">
+            <summary>
+            <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
+            design pattern such as a factory. If the type interface does
+            not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
+            this wrapper makes it possible to call IDispose the object
+            in a consistent manner. It also allows the class to be used
+            in a using statement.
+            </summary>
+        </member>
+        <member name="P:System.ITryDisposable`1.Instance">
+            <summary>
+            Gets the underlying instance.
+            </summary>
+        </member>
+        <member name="T:System.TryDisposable`1">
+            <summary>
+            <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
+            design pattern such as a factory. If the type interface does
+            not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
+            this wrapper makes it possible to call IDispose the object
+            in a consistent manner. It also allows the class to be used
+            in a using statement.
+            </summary>
+            <typeparam name="TUnderlyingType">The interface type of the concrete instance being disposed.</typeparam>
+        </member>
+        <member name="M:System.TryDisposable`1.#ctor(`0)">
+            <summary>
+            Creates an instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.
+            </summary>
+            <param name="instance">An instance of the object that <see cref="T:System.IDisposable"/>
+            may be implemented on.</param>
+        </member>
+        <member name="P:System.TryDisposable`1.Instance">
+            <summary>
+            Gets the underlying instance.
+            </summary>
+        </member>
+        <member name="M:System.TryDisposable`1.Dispose">
+            <summary>
+            Disposes the underlying instance.
+            </summary>
+        </member>
+        <member name="M:System.TryDisposable`1.Create``1(``0)">
+            <summary>
+            Creates an instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="instance">A concrete instance of the type specified.</param>
+            <returns>An instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.</returns>
+        </member>
+        <member name="M:System.TryDisposable`1.Dispose``1(``0)">
+            <summary>
+            Attempts to dispose an object of the given type.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="instance">A concrete instance of the type specified.</param>
+        </member>
+        <member name="T:System.TryDisposableFactory">
+            <summary>
+            Provides methods for creating instances of <see cref="T:System.ITryDisposable"/>.
+            </summary>
+        </member>
+        <member name="M:System.TryDisposableFactory.Create``1(``0)">
+            <summary>
+            Creates an instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="instance">A concrete instance of the type specified.</param>
+            <returns>An instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.</returns>
+        </member>
+    </members>
+</doc>
