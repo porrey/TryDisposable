@@ -13,7 +13,7 @@
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<Copyright>Copyright © Daniel M. Porrey 2019-2020</Copyright>
 		<Authors>Daniel M. Porrey</Authors>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 		<PackageIcon>try-disposable.png</PackageIcon>
 		<PackageIconUrl>https://github.com/porrey/TryDisposable/raw/master/Images/try-disposable.png</PackageIconUrl>
 		<PackageTags>dispose</PackageTags>
@@ -21,6 +21,8 @@
 
 	<PropertyGroup>
 	  <DocumentationFile>TryDisposable.xml</DocumentationFile>
+	  <AssemblyVersion>1.2.0.0</AssemblyVersion>
+	  <FileVersion>1.2.0.0</FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

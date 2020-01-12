@@ -9,7 +9,7 @@
             <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
             design pattern such as a factory. If the type interface does
             not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
-            this wrapper makes it possible to call Dispose on the object
+            this wrapper makes it possible to call Dispose() on the object
             in a consistent manner. It also allows the class to be used
             in a using statement.
             </summary>
@@ -19,7 +19,7 @@
             <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
             design pattern such as a factory. If the type interface does
             not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
-            this wrapper makes it possible to call IDispose the object
+            this wrapper makes it possible to call Dispose() on the object
             in a consistent manner. It also allows the class to be used
             in a using statement.
             </summary>
@@ -34,7 +34,7 @@
             <see cref="T:System.IDisposable"/> wrapper for objects retrieved from a creation
             design pattern such as a factory. If the type interface does
             not expose <see cref="T:System.IDisposable"/>, but the concrete implementation does,
-            this wrapper makes it possible to call IDispose the object
+            this wrapper makes it possible to call Dispose() on the object
             in a consistent manner. It also allows the class to be used
             in a using statement.
             </summary>
@@ -75,12 +75,48 @@
             <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
             <param name="instance">A concrete instance of the type specified.</param>
         </member>
+        <member name="M:System.TryDisposable`1.DisposeAsync``1(``0)">
+            <summary>
+            Attempts to dispose an object of the given type.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="instance">A concrete instance of the type specified.</param>
+        </member>
+        <member name="T:System.TryDisposableExtensions">
+            <summary>
+            Extensions methods.
+            </summary>
+        </member>
+        <member name="M:System.TryDisposableExtensions.TryDispose``1(``0)">
+            <summary>
+            Attempts to dispose an object of the given type.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="item">A concrete instance of the type specified.</param>
+        </member>
+        <member name="M:System.TryDisposableExtensions.TryDisposeAsync``1(``0)">
+            <summary>
+            Attempts to dispose an object of the given type.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="item">A concrete instance of the type specified.</param>
+        </member>
         <member name="T:System.TryDisposableFactory">
             <summary>
             Provides methods for creating instances of <see cref="T:System.ITryDisposable"/>.
             </summary>
         </member>
         <member name="M:System.TryDisposableFactory.Create``1(``0)">
+            <summary>
+            Creates an instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.
+            </summary>
+            <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+            <param name="instance">A concrete instance of the type specified.</param>
+            <returns>An instance of <see cref="T:System.TryDisposable`1"/> of the specified
+            typed with the given underlying object instance.</returns>
+        </member>
+        <member name="M:System.TryDisposableFactory.CreateAsync``1(``0)">
             <summary>
             Creates an instance of <see cref="T:System.TryDisposable`1"/> of the specified
             typed with the given underlying object instance.

@@ -1,10 +1,12 @@
-﻿namespace System
+﻿using System.Threading.Tasks;
+
+namespace System
 {
 	/// <summary>
 	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
 	/// design pattern such as a factory. If the type interface does
 	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
-	/// this wrapper makes it possible to call IDispose the object
+	/// this wrapper makes it possible to call Dispose() on the object
 	/// in a consistent manner. It also allows the class to be used
 	/// in a using statement.
 	/// </summary>
@@ -33,7 +35,7 @@
 		/// </summary>
 		public void Dispose()
 		{
-			TryDisposable<TUnderlyingType>.Dispose(this.Instance);
+			this.Instance.TryDispose();
 		}
 
 		/// <summary>
@@ -57,7 +59,17 @@
 		/// <param name="instance">A concrete instance of the type specified.</param>
 		public static void Dispose<TItem>(TItem instance)
 		{
-			(instance as IDisposable)?.Dispose();
+			instance.TryDispose();
+		}
+
+		/// <summary>
+		/// Attempts to dispose an object of the given type.
+		/// </summary>
+		/// <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
+		/// <param name="instance">A concrete instance of the type specified.</param>
+		public static Task DisposeAsync<TItem>(TItem instance)
+		{
+			return instance.TryDisposeAsync();
 		}
 	}
 }

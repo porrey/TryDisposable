@@ -4,7 +4,7 @@
 	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
 	/// design pattern such as a factory. If the type interface does
 	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
-	/// this wrapper makes it possible to call Dispose on the object
+	/// this wrapper makes it possible to call Dispose() on the object
 	/// in a consistent manner. It also allows the class to be used
 	/// in a using statement.
 	/// </summary>
@@ -16,11 +16,11 @@
 	/// <see cref="IDisposable"/> wrapper for objects retrieved from a creation
 	/// design pattern such as a factory. If the type interface does
 	/// not expose <see cref="IDisposable"/>, but the concrete implementation does,
-	/// this wrapper makes it possible to call IDispose the object
+	/// this wrapper makes it possible to call Dispose() on the object
 	/// in a consistent manner. It also allows the class to be used
 	/// in a using statement.
 	/// </summary>
-	public interface ITryDisposable<TUnderlyingType> : ITryDisposable, IDisposable
+	public interface ITryDisposable<TUnderlyingType> : ITryDisposable
 	{
 		/// <summary>
 		/// Gets the underlying instance.
