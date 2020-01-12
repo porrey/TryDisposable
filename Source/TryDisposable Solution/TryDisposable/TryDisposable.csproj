@@ -15,7 +15,7 @@
 		<Authors>Daniel M. Porrey</Authors>
 		<Version>1.1.0</Version>
 		<PackageIcon>try-disposable.png</PackageIcon>
-		<PackageIconUrl>https://raw.githubusercontent.com/porrey/TryDisposable/master/Image/try-disposable.png</PackageIconUrl>
+		<PackageIconUrl>https://github.com/porrey/TryDisposable/raw/master/Images/try-disposable.png</PackageIconUrl>
 		<PackageTags>dispose</PackageTags>
 	</PropertyGroup>
 
