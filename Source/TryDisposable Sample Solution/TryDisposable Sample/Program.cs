@@ -17,16 +17,20 @@ namespace ConsoleApp1
 			ISomeThing someThing = new SomeThing();
 			await someThing.TryDisposeAsync();
 
-			ITemporaryFolder tempFolder = TemporaryFolder.Factory.Create();
+			// wrap the ITemporaryFolder in a using statement.
+			ITemporaryFolder tempFolder1 = TemporaryFolderFactory.Create1();
 
-			using (ITryDisposable<ITemporaryFolder> disposableTempFolder = TryDisposableFactory.Create(tempFolder))
+			using (ITryDisposable<ITemporaryFolder> disposableTempFolder = TryDisposableFactory.Create(tempFolder1))
 			{
 				string path = disposableTempFolder.Instance.Path;
 
 				// If tempFolder is disposable, it will get disposed, otherwise it will be ignored.
 			}
 
-			using (ITryDisposable disposableTempFolder = TryDisposableFactory.Create(tempFolder))
+			// wrap the ITemporaryFolder in a using statement (non generic interface).
+			ITemporaryFolder tempFolder2 = TemporaryFolderFactory.Create2();
+
+			using (ITryDisposable disposableTempFolder = TryDisposableFactory.Create(tempFolder2))
 			{
 				// If tempFolder is disposable, it will get disposed, otherwise it will be ignored.
 			}
