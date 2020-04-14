@@ -13,16 +13,19 @@
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<Copyright>Copyright © Daniel M. Porrey 2019-2020</Copyright>
 		<Authors>Daniel M. Porrey</Authors>
-		<Version>1.3.0</Version>
+		<Version>1.3.1</Version>
+		<DocumentationFile>TryDisposable.xml</DocumentationFile>
+		<AssemblyVersion>1.3.1</AssemblyVersion>
+		<FileVersion>1.3.1</FileVersion>
 		<PackageIcon>try-disposable.png</PackageIcon>
 		<PackageIconUrl>https://github.com/porrey/TryDisposable/raw/master/Images/try-disposable.png</PackageIconUrl>
 		<PackageTags>dispose</PackageTags>
-	</PropertyGroup>
-
-	<PropertyGroup>
-	  <DocumentationFile>TryDisposable.xml</DocumentationFile>
-	  <AssemblyVersion>1.3.0</AssemblyVersion>
-	  <FileVersion>1.3.0</FileVersion>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,6 +37,13 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>
