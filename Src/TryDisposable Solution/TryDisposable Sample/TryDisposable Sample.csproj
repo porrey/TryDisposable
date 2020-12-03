@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	  <TargetFrameworks>net472;netcoreapp3.1;net5.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.DisposableObject" Version="1.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TryDisposable\TryDisposable.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryDisposable", "TryDisposable\TryDisposable.csproj", "{3546262D-D22D-404B-B998-4654445BB443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDisposable", "TryDisposable\TryDisposable.csproj", "{3546262D-D22D-404B-B998-4654445BB443}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDisposable Sample", "TryDisposable Sample\TryDisposable Sample.csproj", "{9E635101-7840-4266-B8A9-BC651569709D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3546262D-D22D-404B-B998-4654445BB443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3546262D-D22D-404B-B998-4654445BB443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3546262D-D22D-404B-B998-4654445BB443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E635101-7840-4266-B8A9-BC651569709D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E635101-7840-4266-B8A9-BC651569709D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E635101-7840-4266-B8A9-BC651569709D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E635101-7840-4266-B8A9-BC651569709D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
