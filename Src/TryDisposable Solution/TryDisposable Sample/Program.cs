@@ -35,7 +35,7 @@ namespace ConsoleApp1
 			ISomeThing someThing = new SomeThing();
 			await someThing.TryDisposeAsync();
 
-#if (NET5_0)
+#if (NET5_0 || NET6_0)
 			// ***
 			// *** An object that can be disposed.
 			// ***

@@ -55,7 +55,7 @@ namespace System
 			this.Instance.TryDispose();
 		}
 
-#if (!NET5_0)
+#if (!NET5_0 && !NET6_0)
 		/// <summary>
 		/// Creates an instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.
@@ -81,7 +81,7 @@ namespace System
 			instance.TryDispose();
 		}
 
-#if (NET5_0)
+#if (NET5_0 || NET6_0)
 		/// <summary>
 		/// Attempts to dispose an object of the given type.
 		/// </summary>

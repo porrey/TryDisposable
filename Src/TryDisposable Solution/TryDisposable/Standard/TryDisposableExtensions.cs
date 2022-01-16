@@ -33,7 +33,7 @@ namespace System
 			(item as IDisposable)?.Dispose();
 		}
 
-#if (!NET5_0)
+#if (!NET5_0 && !NET6_0)
 		/// <summary>
 		/// Attempts to dispose an object of the given type.
 		/// </summary>

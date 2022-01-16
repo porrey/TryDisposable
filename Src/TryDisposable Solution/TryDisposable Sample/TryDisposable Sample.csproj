@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-	  <TargetFrameworks>net472;netcoreapp3.1;net5.0</TargetFrameworks>
+	  <TargetFrameworks>net472;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.DisposableObject" Version="1.4.1" />
+    <PackageReference Include="System.DisposableObject" Version="1.5.1" />
   </ItemGroup>
 
   <ItemGroup>
