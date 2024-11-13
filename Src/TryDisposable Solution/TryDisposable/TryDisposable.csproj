@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://github.com/porrey/TryDisposable</PackageProjectUrl>
@@ -11,12 +11,12 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<Description>Wrap an object in a disposable decorator to attempt to dispose the object later. This is useful when retrieving an instance of an object from a factory or container while only having an interface reference. If the interface  does not implement IDisposable or IAsyncDisposable, but the concrete class does, this will allow you to dispose the instance without the need to check for the interface and cast it.</Description>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
-		<Copyright>Copyright © Daniel M. Porrey 2017-2024</Copyright>
+		<Copyright>Copyright © Daniel M. Porrey 2017-2025</Copyright>
 		<Authors>Daniel M. Porrey</Authors>
-		<Version>8.0.1</Version>
+		<Version>9.0.0</Version>
 		<DocumentationFile>TryDisposable.xml</DocumentationFile>
-		<AssemblyVersion>8.0.1</AssemblyVersion>
-		<FileVersion>8.0.1</FileVersion>
+		<AssemblyVersion>9.0.0</AssemblyVersion>
+		<FileVersion>9.0.0</FileVersion>
 		<PackageIcon>try-disposable.png</PackageIcon>
 		<PackageIconUrl>https://github.com/porrey/TryDisposable/raw/master/Images/try-disposable.png</PackageIconUrl>
 		<PackageTags>dispose disposable IDisposable IAsyncDisposable</PackageTags>
@@ -44,12 +44,4 @@
 			<PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-	</ItemGroup>
-
 </Project>
