@@ -1,5 +1,5 @@
 ﻿//
-// Copyright(C) 2017-2025, Daniel M. Porrey. All rights reserved.
+// Copyright(C) 2017-2026, Daniel M. Porrey. All rights reserved.
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published
@@ -26,7 +26,7 @@ namespace ConsoleApp1
 			//
 			// An object that cannot be disposed.
 			//
-			object obj = new object();
+			object obj = new();
 			await obj.TryDisposeAsync();
 
 			//
@@ -35,13 +35,11 @@ namespace ConsoleApp1
 			ISomeThing someThing = new SomeThing();
 			await someThing.TryDisposeAsync();
 
-#if (NET5_0 || NET6_0)
 			//
 			// An object that can be disposed.
 			//
 			ISomeAsyncThing someAsyncThing = new SomeAsyncThing();
 			await someAsyncThing.TryDisposeAsync();
-#endif
 
 			//
 			// Wrap the ITemporaryFolder in a using statement.

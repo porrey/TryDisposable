@@ -1,5 +1,5 @@
 ﻿//
-// Copyright(C) 2017-2025, Daniel M. Porrey. All rights reserved.
+// Copyright(C) 2017-2026, Daniel M. Porrey. All rights reserved.
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published
@@ -14,8 +14,6 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see http://www.gnu.org/licenses/.
 // 
-using System;
-
 #pragma warning disable DF0100
 
 namespace ConsoleApp1

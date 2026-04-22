@@ -1,5 +1,5 @@
 ﻿//
-// Copyright(C) 2017-2025, Daniel M. Porrey. All rights reserved.
+// Copyright(C) 2017-2026, Daniel M. Porrey. All rights reserved.
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published
@@ -15,8 +15,6 @@
 // along with this program. If not, see http://www.gnu.org/licenses/.
 //
 #if NET10_0
-using System.Threading.Tasks;
-
 namespace System
 {
 	/// <summary>
