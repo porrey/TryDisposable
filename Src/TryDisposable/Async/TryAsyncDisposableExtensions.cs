@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see http://www.gnu.org/licenses/.
 //
-#if NET10_0
 namespace System
 {
 	/// <summary>
@@ -29,20 +28,16 @@ namespace System
 		/// <param name="item">A concrete instance of the type specified.</param>
 		public static ValueTask TryDisposeAsync<TItem>(this TItem item)
 		{
-			ValueTask returnValue = default;
-
 			if (item is IAsyncDisposable asyncDisposable)
 			{
-				returnValue = asyncDisposable.DisposeAsync();
+				return asyncDisposable.DisposeAsync();
 			}
 			else if (item is IDisposable disposable)
 			{
 				disposable.Dispose();
-				returnValue = ValueTask.CompletedTask;
 			}
 
-			return returnValue;
+			return ValueTask.CompletedTask;
 		}
 	}
 }
-#endif

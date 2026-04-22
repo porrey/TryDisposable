@@ -58,6 +58,11 @@
             Disposes the underlying instance.
             </summary>
         </member>
+        <member name="M:System.TryAsyncDisposable`1.DisposeAsyncCore">
+            <summary>
+            Performs the actual async disposal of the underlying instance.
+            </summary>
+        </member>
         <member name="M:System.TryAsyncDisposable`1.DisposeAsync``1(``0)">
             <summary>
             Attempts to dispose an object of the given type.
@@ -155,6 +160,12 @@
             <summary>
             Disposes the underlying instance.
             </summary>
+        </member>
+        <member name="M:System.TryDisposable`1.Dispose(System.Boolean)">
+            <summary>
+            Disposes the underlying instance.
+            </summary>
+            <param name="disposing">When <c>true</c>, disposes managed resources.</param>
         </member>
         <member name="M:System.TryDisposable`1.Dispose``1(``0)">
             <summary>
