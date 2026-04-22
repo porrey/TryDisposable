@@ -38,7 +38,10 @@ namespace System
 		public TryAsyncDisposable(TUnderlyingType instance)
 		{
 			if (instance == null)
-			{ throw new ArgumentNullException(nameof(instance)); }
+			{ 
+				throw new ArgumentNullException(nameof(instance)); 
+			}
+			
 			this.Instance = instance;
 		}
 
