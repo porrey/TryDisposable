@@ -27,6 +27,8 @@ namespace System
 	/// <typeparam name="TUnderlyingType">The interface type of the concrete instance being disposed.</typeparam>
 	public class TryDisposable<TUnderlyingType> : ITryDisposable<TUnderlyingType>
 	{
+		private bool _disposed = false;
+
 		/// <summary>
 		/// Creates an instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.
@@ -50,24 +52,26 @@ namespace System
 		/// </summary>
 		public void Dispose()
 		{
-			this.Instance.TryDispose();
+			this.Dispose(true);
+			GC.SuppressFinalize(this);
 		}
 
-#if !NET10_0
 		/// <summary>
-		/// Creates an instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
-		/// typed with the given underlying object instance.
+		/// Disposes the underlying instance.
 		/// </summary>
-		/// <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
-		/// <param name="instance">A concrete instance of the type specified.</param>
-		/// <returns>An instance of <see cref="TryDisposable{TUnderlyingType}"/> of the specified
-		/// typed with the given underlying object instance.</returns>
-		[Obsolete("Use System.TryDisposableFactory.Create() method instead.")]
-		public static ITryDisposable<TItem> Create<TItem>(TItem instance)
+		/// <param name="disposing">When <c>true</c>, disposes managed resources.</param>
+		protected virtual void Dispose(bool disposing)
 		{
-			return new TryDisposable<TItem>(instance);
+			if (!this._disposed)
+			{
+				if (disposing)
+				{
+					this.Instance.TryDispose();
+				}
+
+				this._disposed = true;
+			}
 		}
-#endif
 
 		/// <summary>
 		/// Attempts to dispose an object of the given type.
@@ -79,7 +83,6 @@ namespace System
 			instance.TryDispose();
 		}
 
-#if NET10_0
 		/// <summary>
 		/// Attempts to dispose an object of the given type.
 		/// </summary>
@@ -89,16 +92,5 @@ namespace System
 		{
 			return instance.TryDisposeAsync();
 		}
-#else
-		/// <summary>
-		/// Attempts to dispose an object of the given type.
-		/// </summary>
-		/// <typeparam name="TItem">The interface type of the concrete instance being disposed.</typeparam>
-		/// <param name="instance">A concrete instance of the type specified.</param>
-		public static Task DisposeAsync<TItem>(TItem instance)
-		{
-			return instance.TryDisposeAsync();
-		}
-#endif
 	}
 }

@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see http://www.gnu.org/licenses/.
 //
-#if NET10_0
 namespace System
 {
 	/// <summary>
@@ -28,6 +27,8 @@ namespace System
 	/// <typeparam name="TUnderlyingType">The interface type of the concrete instance being disposed.</typeparam>
 	public class TryAsyncDisposable<TUnderlyingType> : ITryAsyncDisposable<TUnderlyingType>
 	{
+		private bool _disposed = false;
+
 		/// <summary>
 		/// Creates an instance of <see cref="TryAsyncDisposable{TUnderlyingType}"/> of the specified
 		/// typed with the given underlying object instance.
@@ -49,7 +50,20 @@ namespace System
 		/// <summary>
 		/// Disposes the underlying instance.
 		/// </summary>
-		public ValueTask DisposeAsync()
+		public async ValueTask DisposeAsync()
+		{
+			if (!this._disposed)
+			{
+				await this.DisposeAsyncCore();
+				this._disposed = true;
+				GC.SuppressFinalize(this);
+			}
+		}
+
+		/// <summary>
+		/// Performs the actual async disposal of the underlying instance.
+		/// </summary>
+		protected virtual ValueTask DisposeAsyncCore()
 		{
 			return this.Instance.TryDisposeAsync();
 		}
@@ -65,4 +79,3 @@ namespace System
 		}
 	}
 }
-#endif
