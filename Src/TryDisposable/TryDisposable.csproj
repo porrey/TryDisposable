@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net10.0</TargetFramework>
+		<TargetFramework>net11.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://github.com/porrey/TryDisposable</PackageProjectUrl>
@@ -13,10 +13,10 @@
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<Copyright>Copyright © Daniel M. Porrey 2017-2026</Copyright>
 		<Authors>Daniel M. Porrey</Authors>
-		<Version>10.1.0</Version>
+		<Version>11.0.1</Version>
 		<DocumentationFile>XmlDocs/TryDisposable.xml</DocumentationFile>
-		<AssemblyVersion>10.1.0</AssemblyVersion>
-		<FileVersion>10.1.0</FileVersion>
+		<AssemblyVersion>11.0.1</AssemblyVersion>
+		<FileVersion>11.0.1</FileVersion>
 		<PackageIcon>try-disposable.png</PackageIcon>
 		<PackageIconUrl>https://github.com/porrey/TryDisposable/raw/master/Images/try-disposable.png</PackageIconUrl>
 		<PackageTags>dispose disposable IDisposable IAsyncDisposable</PackageTags>
